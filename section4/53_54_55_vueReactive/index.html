@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script src="vue.js"></script>
+
+    <div id="app">
+      <p>{{ message }}</p>
+      <p>{{ name }}</p>
+      <button v-on:click="message = 'ボタンから変更。'">変更</button>
+    </div>
+
+    <script>
+      const data = {
+        message: "こんにちは",
+        name: "よしぴー",
+      };
+
+      const vm = new Vue({
+        el: "#app",
+        data: data,
+      });
+
+      console.log(data === vm.$data); // true
+      console.log(vm);
+    </script>
+  </body>
+</html>
