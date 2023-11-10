@@ -9,11 +9,23 @@
   <body>
     <script src="vue.js"></script>
 
-    <div id="app"></div>
+    <div id="app">
+      <button v-on:click="ok = !ok">ボタン</button>
+      <p v-if="ok">If</p>
+      <p v-show="ok">Show</p>
+      <p v-show="!ok">no ok</p>
+
+      <template v-show="ok">
+        <p>Test</p>
+      </template>
+    </div>
 
     <script>
       new Vue({
         el: "#app",
+        data: {
+          ok: true,
+        },
       });
     </script>
   </body>
